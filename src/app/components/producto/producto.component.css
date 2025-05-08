@@ -1,0 +1,127 @@
+.titulo-centrado {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #000000;
+    font-size: 2rem;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+}
+
+.productos {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+    color: #000000;
+}
+
+.producto {
+    background-color: #222;
+    padding: 20px;
+    text-align: center;
+    width: 250px;
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.producto:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+}
+
+.producto img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+
+.imagen-producto {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+
+.producto h3 {
+    font-size: 1.5rem;
+    margin: 8px 0;
+    color: #ffffff;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+}
+
+.producto p {
+    font-size: 1.1rem;
+    color: #cccccc;
+    margin-bottom: 12px;
+}
+
+.producto button {
+    background-color: #000;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-family: 'Poppins', sans-serif;
+}
+
+.producto button:hover {
+    background-color: #333;
+}
+
+.producto button:disabled {
+    background-color: #555;
+    cursor: not-allowed;
+}
+
+.carrito-button {
+    display: block;
+    margin: 20px auto;
+    background-color: #000;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+}
+
+.carrito-button:hover {
+    background-color: #333;
+}
+
+.cargando, .error {
+    text-align: center;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 400px;
+    border-radius: 12px;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+}
+
+.cargando {
+    background-color: #2a2a2a;
+    border: 1px solid #444;
+}
+
+.error {
+    background-color: #c82333;
+    border: 1px solid #a81f28;
+}
+
+@media (max-width: 600px) {
+    .producto {
+        width: 100%;
+    }
+}

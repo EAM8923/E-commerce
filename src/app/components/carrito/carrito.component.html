@@ -1,0 +1,39 @@
+<div class="carrito-container">
+    <h2 class="carrito-titulo">Carrito de compras</h2>
+
+    <div class="carrito-contenido" *ngIf="carrito.length > 0">
+        <ul class="carrito-lista">
+            <li class="carrito-item" *ngFor="let producto of carrito; let i = index">
+                <img [src]="producto.imagen" alt="{{ producto.nombre }}" class="producto-imagen">
+                <div class="producto-info">
+                    <span class="producto-nombre">{{ producto.nombre }}</span>
+                    <span class="producto-precio">${{ producto.precio }}</span>
+                    <span class="producto-cantidad">Cantidad: {{ producto.cantidad }}</span>
+                </div>
+                <button class="eliminar-button" (click)="eliminarProducto(i)">Eliminar</button>
+            </li>
+        </ul>
+
+        <div class="carrito-resumen">
+            <div class="carrito-total">
+                <span>Total:</span>
+                <span>${{ calcularTotal() }}</span>
+            </div>
+            <div id="paypal-button-container"></div>
+            <button class="recibo-button" (click)="generarXML()">Generar Recibo</button>
+            <button class="recibo-button" (click)="descargarXML()">Descargar Recibo</button>
+        </div>
+    </div>
+
+    <p *ngIf="carrito.length === 0" class="carrito-vacio">
+        <span class="carrito-vacio-icon">🛒</span>
+        El carrito está vacío
+    </p>
+
+    <div *ngIf="recibo" class="recibo">
+        <h3 class="recibo-titulo">Recibo</h3>
+        <pre class="recibo-contenido">{{ recibo }}</pre>
+    </div>
+
+    <button class="carrito-button" (click)="irAProductos()">Volver a Productos</button>
+</div>

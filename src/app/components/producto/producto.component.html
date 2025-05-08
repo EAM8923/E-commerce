@@ -1,0 +1,20 @@
+<h2 class="titulo-centrado">Productos</h2>
+
+<div *ngIf="cargando" class="cargando">
+  Cargando productos...
+</div>
+
+<div *ngIf="error" class="error">
+  Error al cargar los productos. Mostrando datos de respaldo.
+</div>
+
+<div class="productos">
+  <div *ngFor="let producto of productos" class="producto">
+    <img [src]="producto.imagen" alt="{{producto.nombre}}" class="imagen-producto">
+    <h3>{{producto.nombre}}</h3>
+    <p>Precio: ${{producto.precio}}</p>
+    <button (click)="agregarAlCarrito(producto)">Agregar al carrito</button>
+  </div>
+</div>
+
+<button class="carrito-button" (click)="irAlCarrito()">Ir al carrito</button>
